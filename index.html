@@ -1,1 +1,1211 @@
-<p>Hello My Name Is Vinay Kotwal</p>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ADVERT - Your Local Advertising Hub</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 0 0 20px 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            margin-bottom: 2rem;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 2px solid #667eea;
+            color: #667eea;
+        }
+
+        .btn-outline:hover {
+            background: #667eea;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 4rem 0;
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .search-section {
+            background: rgba(242, 241, 241, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+
+        .search-bar {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            font-size: 1rem;
+            min-width: 250px;
+            transition: all 0.3s ease;
+        }
+
+        .search-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .search-select {
+            padding: 15px 20px;
+            border: 2px solid #e0e0e0;
+            border-radius: 25px;
+            background: white;
+            font-size: 1rem;
+            cursor: pointer;
+            min-width: 150px;
+        }
+
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .category-card {
+            background: rgba(16, 11, 11, 0.9);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .category-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .ads-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .ad-card {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ad-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .ad-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .ad-title {
+            font-size: 1.2rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .ad-description {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .ad-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            color: #888;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            z-index: 1000;
+        }
+
+        .modal-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 500px;
+            width: 90%;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .form-input, .form-select, .form-textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus, .form-select:focus, .form-textarea:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .form-textarea {
+            resize: vertical;
+            height: 100px;
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            line-height: 1;
+        }
+
+        .close-modal:hover {
+            color: #333;
+        }
+
+        .user-info {
+            display: none;
+            color: white;
+            font-weight: 600;
+        }
+
+        .options-menu {
+            position: relative;
+            display: inline-block;
+        }
+
+        .options-btn {
+            background: none;
+            border: none;
+            color: #667eea;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+        }
+
+        .options-btn:hover {
+            background: rgba(102, 126, 234, 0.1);
+            transform: rotate(90deg);
+        }
+
+        .options-dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            background: rgba(252, 249, 249, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+            min-width: 200px;
+            z-index: 1001;
+            display: none;
+            padding: 0.5rem 0;
+            margin-top: 0.5rem;
+        }
+
+        .options-dropdown.show {
+            display: block;
+            animation: slideDown 0.3s ease;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .option-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .option-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+        }
+
+        .option-icon {
+            font-size: 1.2rem;
+            margin-right: 12px;
+            width: 20px;
+        }
+
+        .option-text {
+            font-weight: 500;
+        }
+
+        .theme-toggle {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+        }
+
+        .toggle-switch {
+            position: relative;
+            width: 50px;
+            height: 25px;
+            background: #ccc;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .toggle-switch.active {
+            background: #667eea;
+        }
+
+        .toggle-slider {
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 21px;
+            height: 21px;
+            background: white;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        .toggle-switch.active .toggle-slider {
+            transform: translateX(25px);
+        }
+
+        .divider {
+            height: 1px;
+            background: #eee;
+            margin: 0.5rem 0;
+        }
+
+        body.dark-theme {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+        }
+
+        .dark-theme header {
+            background: rgba(26, 26, 46, 0.95);
+        }
+
+        .dark-theme .search-section,
+        .dark-theme .ad-card,
+        .dark-theme .category-card {
+            background: rgba(26, 26, 46, 0.9);
+            color: white;
+        }
+
+        .dark-theme .search-input,
+        .dark-theme .search-select {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: rgb(255, 255, 255);
+        }
+
+        .dark-theme .search-input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .dark-theme .options-dropdown {
+            background: rgba(26, 26, 46, 0.95);
+        }
+
+        .dark-theme .option-item {
+            color: white;
+        }
+
+        .dark-theme .option-item:hover {
+            background: rgba(102, 126, 234, 0.2);
+        }
+
+        .dark-theme .modal-content {
+            background: rgba(26, 26, 46, 0.95);
+            color: white;
+        }
+
+        .dark-theme .form-input,
+        .dark-theme .form-select,
+        .dark-theme .form-textarea {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: rgba(255, 255, 255, 0.2);
+            color: white;
+        }
+
+        .dark-theme .form-input::placeholder,
+        .dark-theme .form-textarea::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        .favorites-count,
+        .history-count {
+            background: #e74c3c;
+            color: white;
+            border-radius: 10px;
+            padding: 2px 6px;
+            font-size: 0.7rem;
+            font-weight: bold;
+            margin-left: auto;
+        }
+
+        .footer {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-radius: 20px 20px 0 0;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+            }
+            
+            .search-input, .search-select {
+                min-width: auto;
+            }
+            
+            .nav-buttons {
+                flex-wrap: wrap;
+                gap: 0.5rem;
+            }
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">ADVERT</div>
+            <div class="nav-buttons">
+                <div class="user-info" id="userInfo"></div>
+                <button class="btn btn-outline" id="loginBtn" onclick="openLoginModal()">Login</button>
+                <button class="btn btn-primary" id="postAdBtn" onclick="checkLoginAndPost()">Post Advertisement</button>
+                <button class="btn btn-outline" id="logoutBtn" onclick="logout()" style="display:none;">Logout</button>
+                
+                <div class="options-menu">
+                    <button class="options-btn" onclick="toggleOptionsMenu()">⚙️</button>
+                    <div class="options-dropdown" id="optionsDropdown">
+                        <div class="option-item" onclick="goHome()">
+                            <span class="option-icon">🏠</span>
+                            <span class="option-text">Home</span>
+                        </div>
+                        <div class="option-item" onclick="showFavorites()">
+                            <span class="option-icon">❤️</span>
+                            <span class="option-text">Favorites</span>
+                            <span class="favorites-count" id="favCount">0</span>
+                        </div>
+                        <div class="option-item" onclick="showHistory()">
+                            <span class="option-icon">📝</span>
+                            <span class="option-text">History</span>
+                            <span class="history-count" id="historyCount">0</span>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="option-item">
+                            <span class="option-icon">🌓</span>
+                            <div class="theme-toggle">
+                                <span class="option-text">Dark Mode</span>
+                                <div class="toggle-switch" id="themeToggle" onclick="toggleTheme(event)">
+                                    <div class="toggle-slider"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="divider"></div>
+                        <div class="option-item" onclick="showSettings()">
+                            <span class="option-icon">⚙️</span>
+                            <span class="option-text">Settings</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero fade-in">
+            <h1>Welcome to ADVERT</h1>
+            <p>Your one-stop destination for local advertisements, job postings, and community notices</p>
+        </section>
+
+        <section class="search-section fade-in">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: #343232;">Find What You're Looking For</h2>
+            <div class="search-bar">
+                <input type="text" class="search-input" id="searchInput" placeholder="Search advertisements...">
+                <select class="search-select" id="categoryFilter">
+                    <option value="">All Categories</option>
+                    <option value="jobs">Job Postings</option>
+                    <option value="government">Government Notices</option>
+                    <option value="education">Education</option>
+                    <option value="business">Business & Restaurants</option>
+                    <option value="offers">Offers & Discounts</option>
+                    <option value="alerts">Important Alerts</option>
+                </select>
+                <select class="search-select" id="locationFilter">
+                    <option value="">Select Your Location</option>
+                    <option value="mumbai">Mumbai</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="bangalore">Bangalore</option>
+                    <option value="chennai">Chennai</option>
+                    <option value="kolkata">Kolkata</option>
+                    <option value="hyderabad">Hyderabad</option>
+                </select>
+                <button class="btn btn-primary" onclick="searchAds()">Search</button>
+            </div>
+
+            <div class="categories">
+                <div class="category-card" onclick="filterByCategory('jobs')">
+                    <div class="category-icon">💼</div>
+                    <h3>Job Postings</h3>
+                    <p>Find your next career opportunity</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('government')">
+                    <div class="category-icon">🏛️</div>
+                    <h3>Government Notices</h3>
+                    <p>Official announcements & job openings</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('education')">
+                    <div class="category-icon">🎓</div>
+                    <h3>Education</h3>
+                    <p>Schools, colleges & teaching positions</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('business')">
+                    <div class="category-icon">🏪</div>
+                    <h3>Business & Restaurants</h3>
+                    <p>New openings & services</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('offers')">
+                    <div class="category-icon">🎯</div>
+                    <h3>Offers & Discounts</h3>
+                    <p>Great deals from local stores</p>
+                </div>
+                <div class="category-card" onclick="filterByCategory('alerts')">
+                    <div class="category-icon">⚠️</div>
+                    <h3>Important Alerts</h3>
+                    <p>Community announcements</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="adsSection">
+            <h2 style="text-align: center; margin-bottom: 2rem; color: white;">Latest Advertisements</h2>
+            <div class="ads-grid" id="adsGrid">
+                <!-- Sample ads will be populated here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('loginModal')">&times;</span>
+            <h2 style="margin-bottom: 2rem; color: #333;">Login to ADVERT</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label class="form-label">Mobile Number</label>
+                    <input type="tel" class="form-input" id="mobileNumber" placeholder="+91 9876543210" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-input" id="firstName" placeholder="Enter your first name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-input" id="lastName" placeholder="Enter your last name" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Country</label>
+                    <select class="form-select" id="country" required>
+                        <option value="">Select Country</option>
+                        <option value="india">India</option>
+                        <option value="usa">United States</option>
+                        <option value="uk">United Kingdom</option>
+                        <option value="canada">Canada</option>
+                        <option value="australia">Australia</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">State</label>
+                    <input type="text" class="form-input" id="state" placeholder="Enter your state" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-input" id="city" placeholder="Enter your city" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Login / Register</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Post Ad Modal -->
+    <div class="modal" id="postAdModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('postAdModal')">&times;</span>
+            <h2 style="margin-bottom: 2rem; color: #333;">Post Your Advertisement</h2>
+            <form id="postAdForm">
+                <div class="form-group">
+                    <label class="form-label">Advertisement Title</label>
+                    <input type="text" class="form-input" id="adTitle" placeholder="Enter advertisement title" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Category</label>
+                    <select class="form-select" id="adCategory" required>
+                        <option value="">Select Category</option>
+                        <option value="jobs">Job Postings</option>
+                        <option value="government">Government Notices</option>
+                        <option value="education">Education</option>
+                        <option value="business">Business & Restaurants</option>
+                        <option value="offers">Offers & Discounts</option>
+                        <option value="alerts">Important Alerts</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Description</label>
+                    <textarea class="form-textarea" id="adDescription" placeholder="Describe your advertisement..." required></textarea>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Contact Information</label>
+                    <input type="text" class="form-input" id="adContact" placeholder="Phone, email, or address" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label">Location</label>
+                    <input type="text" class="form-input" id="adLocation" placeholder="City, State" required>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">Post Advertisement</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Settings Modal -->
+    <div class="modal" id="settingsModal">
+        <div class="modal-content">
+            <span class="close-modal" onclick="closeModal('settingsModal')">&times;</span>
+            <h2 style="margin-bottom: 2rem; color: #333;">Settings</h2>
+            <div style="text-align: center; color: #666;">
+                <p>⚙️ Settings panel coming soon!</p>
+                <br>
+                <p>Future features:</p>
+                <ul style="text-align: left; margin: 1rem 0;">
+                    <li>Notification preferences</li>
+                    <li>Privacy settings</li>
+                    <li>Account management</li>
+                    <li>Language selection</li>
+                    <li>Data export/import</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 ADVERT. Your trusted local advertising platform. Connecting communities through information.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Sample data for demonstration
+        let advertisements = [
+            {
+                id: 1,
+                title: "Software Developer Position - Tech Innovate",
+                category: "jobs",
+                description: "Looking for experienced software developers to join our dynamic team. Full-time position with excellent benefits.",
+                contact: "hr@techinnovate.com | +91 9876543210",
+                location: "Mumbai",
+                date: "2025-08-20",
+                author: "HR Team"
+            },
+            {
+                id: 2,
+                title: "Government Teacher Recruitment 2025",
+                category: "government",
+                description: "State Government announces recruitment for 500+ teaching positions. Apply before September 30th, 2025.",
+                contact: "education.dept@gov.in",
+                location: "Delhi",
+                date: "2025-08-19",
+                author: "Education Department"
+            },
+            {
+                id: 3,
+                title: "New Restaurant Opening - Spice Garden",
+                category: "business",
+                description: "Grand opening of Spice Garden! Authentic Indian cuisine with modern ambiance. Special discounts for first week.",
+                contact: "spicegarden@restaurant.com | +91 9123456789",
+                location: "Bangalore",
+                date: "2025-08-18",
+                author: "Spice Garden"
+            },
+            {
+                id: 4,
+                title: "50% Off Electronics Sale - MegaMart",
+                category: "offers",
+                description: "Huge electronics sale! Up to 50% off on laptops, smartphones, and home appliances. Limited time offer.",
+                contact: "MegaMart Central Mall | +91 9988776655",
+                location: "Chennai",
+                date: "2025-08-17",
+                author: "MegaMart"
+            },
+            {
+                id: 5,
+                title: "Mathematics Teacher Required - Bright Future School",
+                category: "education",
+                description: "Experienced mathematics teacher required for grades 9-12. Excellent salary package and growth opportunities.",
+                contact: "principal@brightfuture.edu | +91 9555444333",
+                location: "Hyderabad",
+                date: "2025-08-16",
+                author: "Bright Future School"
+            }
+        ];
+
+        let currentUser = null;
+        let filteredAds = [...advertisements];
+        let favorites = JSON.parse(localStorage.getItem('advertFavorites') || '[]');
+        let history = JSON.parse(localStorage.getItem('advertHistory') || '[]');
+        let isDarkTheme = localStorage.getItem('advertTheme') === 'dark';
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+            displayAds(advertisements);
+            initializeAnimations();
+            initializeTheme();
+            updateCounts();
+        });
+
+        function initializeTheme() {
+            if (isDarkTheme) {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeToggle').classList.add('active');
+            }
+        }
+
+        function updateCounts() {
+            document.getElementById('favCount').textContent = favorites.length;
+            document.getElementById('historyCount').textContent = history.length;
+            
+            // Hide counts if zero
+            document.getElementById('favCount').style.display = favorites.length > 0 ? 'block' : 'none';
+            document.getElementById('historyCount').style.display = history.length > 0 ? 'block' : 'none';
+        }
+
+        function toggleOptionsMenu() {
+            const dropdown = document.getElementById('optionsDropdown');
+            dropdown.classList.toggle('show');
+        }
+
+        function toggleTheme(event) {
+            event.stopPropagation();
+            isDarkTheme = !isDarkTheme;
+            
+            if (isDarkTheme) {
+                document.body.classList.add('dark-theme');
+                document.getElementById('themeToggle').classList.add('active');
+                localStorage.setItem('advertTheme', 'dark');
+            } else {
+                document.body.classList.remove('dark-theme');
+                document.getElementById('themeToggle').classList.remove('active');
+                localStorage.setItem('advertTheme', 'light');
+            }
+        }
+
+        function goHome() {
+            // Reset all filters and show all ads
+            document.getElementById('searchInput').value = '';
+            document.getElementById('categoryFilter').value = '';
+            document.getElementById('locationFilter').value = '';
+            displayAds(advertisements);
+            document.getElementById('optionsDropdown').classList.remove('show');
+            
+            // Smooth scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showFavorites() {
+            if (favorites.length === 0) {
+                alert('No favorites yet! Start adding some by clicking the heart icon on advertisements.');
+                document.getElementById('optionsDropdown').classList.remove('show');
+                return;
+            }
+            
+            const favoriteAds = advertisements.filter(ad => favorites.includes(ad.id));
+            displayAds(favoriteAds);
+            document.getElementById('optionsDropdown').classList.remove('show');
+            
+            // Update section title
+            const sectionTitle = document.querySelector('#adsSection h2');
+            sectionTitle.textContent = `Your Favorite Advertisements (${favorites.length})`;
+        }
+
+        function showHistory() {
+            if (history.length === 0) {
+                alert('No history yet! Your viewed advertisements will appear here.');
+                document.getElementById('optionsDropdown').classList.remove('show');
+                return;
+            }
+            
+            // Show most recent first
+            const historyAds = advertisements.filter(ad => history.includes(ad.id))
+                .sort((a, b) => history.indexOf(b.id) - history.indexOf(a.id));
+            
+            displayAds(historyAds);
+            document.getElementById('optionsDropdown').classList.remove('show');
+            
+            // Update section title
+            const sectionTitle = document.querySelector('#adsSection h2');
+            sectionTitle.textContent = `Recently Viewed Advertisements (${history.length})`;
+        }
+
+        function showSettings() {
+            document.getElementById('settingsModal').style.display = 'block';
+            document.getElementById('optionsDropdown').classList.remove('show');
+        }
+
+        function addToFavorites(adId) {
+            if (!favorites.includes(adId)) {
+                favorites.push(adId);
+                localStorage.setItem('advertFavorites', JSON.stringify(favorites));
+                updateCounts();
+            }
+        }
+
+        function removeFromFavorites(adId) {
+            favorites = favorites.filter(id => id !== adId);
+            localStorage.setItem('advertFavorites', JSON.stringify(favorites));
+            updateCounts();
+        }
+
+        function addToHistory(adId) {
+            // Remove if already exists to avoid duplicates
+            history = history.filter(id => id !== adId);
+            // Add to beginning of array (most recent first)
+            history.unshift(adId);
+            // Keep only last 50 items
+            history = history.slice(0, 50);
+            localStorage.setItem('advertHistory', JSON.stringify(history));
+            updateCounts();
+        }
+
+        // Initialize the application
+        document.addEventListener('DOMContentLoaded', function() {
+            checkLoginStatus();
+            displayAds(advertisements);
+            initializeAnimations();
+        });
+
+        function initializeAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+        }
+
+        function checkLoginStatus() {
+            const userData = JSON.parse(localStorage.getItem('advertUser') || 'null');
+            if (userData) {
+                currentUser = userData;
+                updateUIForLoggedInUser();
+            }
+        }
+
+        function openLoginModal() {
+            document.getElementById('loginModal').style.display = 'block';
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        function checkLoginAndPost() {
+            if (currentUser) {
+                document.getElementById('postAdModal').style.display = 'block';
+            } else {
+                alert('Please login first to post an advertisement.');
+                openLoginModal();
+            }
+        }
+
+        // Login form submission
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const userData = {
+                mobile: document.getElementById('mobileNumber').value,
+                firstName: document.getElementById('firstName').value,
+                lastName: document.getElementById('lastName').value,
+                country: document.getElementById('country').value,
+                state: document.getElementById('state').value,
+                city: document.getElementById('city').value
+            };
+
+            // Simulate login (in real app, this would be an API call)
+            localStorage.setItem('advertUser', JSON.stringify(userData));
+            currentUser = userData;
+            
+            updateUIForLoggedInUser();
+            closeModal('loginModal');
+            
+            // Reset form
+            document.getElementById('loginForm').reset();
+            
+            alert('Successfully logged in! You can now post advertisements.');
+        });
+
+        // Post advertisement form submission
+        document.getElementById('postAdForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const newAd = {
+                id: advertisements.length + 1,
+                title: document.getElementById('adTitle').value,
+                category: document.getElementById('adCategory').value,
+                description: document.getElementById('adDescription').value,
+                contact: document.getElementById('adContact').value,
+                location: document.getElementById('adLocation').value,
+                date: new Date().toISOString().split('T')[0],
+                author: currentUser.firstName + ' ' + currentUser.lastName
+            };
+
+            advertisements.unshift(newAd);
+            displayAds(advertisements);
+            closeModal('postAdModal');
+            
+            // Reset form
+            document.getElementById('postAdForm').reset();
+            
+            alert('Your advertisement has been posted successfully!');
+        });
+
+        function updateUIForLoggedInUser() {
+            document.getElementById('loginBtn').style.display = 'none';
+            document.getElementById('logoutBtn').style.display = 'inline-block';
+            document.getElementById('userInfo').style.display = 'block';
+            document.getElementById('userInfo').textContent = 
+                `Welcome, ${currentUser.firstName} ${currentUser.lastName}`;
+        }
+
+        function logout() {
+            localStorage.removeItem('advertUser');
+            currentUser = null;
+            
+            document.getElementById('loginBtn').style.display = 'inline-block';
+            document.getElementById('logoutBtn').style.display = 'none';
+            document.getElementById('userInfo').style.display = 'none';
+            
+            alert('Successfully logged out!');
+        }
+
+        function displayAds(ads) {
+            const adsGrid = document.getElementById('adsGrid');
+            
+            if (ads.length === 0) {
+                adsGrid.innerHTML = '<p style="text-align: center; color: white; grid-column: 1/-1;">No advertisements found matching your criteria.</p>';
+                return;
+            }
+
+            adsGrid.innerHTML = ads.map(ad => `
+                <div class="ad-card fade-in" onclick="addToHistory(${ad.id})">
+                    <div class="ad-badge">${getCategoryIcon(ad.category)} ${getCategoryName(ad.category)}</div>
+                    <div style="position: absolute; top: 10px; left: 10px;">
+                        <button onclick="event.stopPropagation(); toggleFavorite(${ad.id})" 
+                                style="background: none; border: none; font-size: 1.5rem; cursor: pointer; 
+                                       color: ${favorites.includes(ad.id) ? '#e74c3c' : '#ccc'};">
+                            ${favorites.includes(ad.id) ? '❤️' : '🤍'}
+                        </button>
+                    </div>
+                    <div class="ad-title">${ad.title}</div>
+                    <div class="ad-description">${ad.description}</div>
+                    <div class="ad-meta">
+                        <span>📍 ${ad.location}</span>
+                        <span>📅 ${formatDate(ad.date)}</span>
+                    </div>
+                    <div class="ad-meta" style="margin-top: 0.5rem; border-top: 1px solid #eee; padding-top: 0.5rem;">
+                        <span>👤 ${ad.author}</span>
+                        <span>📞 Contact: ${ad.contact}</span>
+                    </div>
+                </div>
+            `).join('');
+
+            // Re-initialize animations for new elements
+            setTimeout(() => {
+                document.querySelectorAll('.ad-card.fade-in').forEach((el, index) => {
+                    setTimeout(() => {
+                        el.classList.add('visible');
+                    }, index * 100);
+                });
+            }, 100);
+        }
+
+        function getCategoryName(category) {
+            const names = {
+                jobs: 'Jobs',
+                government: 'Government',
+                education: 'Education',
+                business: 'Business',
+                offers: 'Offers',
+                alerts: 'Alerts'
+            };
+            return names[category] || 'Other';
+        }
+
+        function getCategoryIcon(category) {
+            const icons = {
+                jobs: '💼',
+                government: '🏛️',
+                education: '🎓',
+                business: '🏪',
+                offers: '🎯',
+                alerts: '⚠️'
+            };
+            return icons[category] || '📢';
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+
+        function searchAds() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const categoryFilter = document.getElementById('categoryFilter').value;
+            const locationFilter = document.getElementById('locationFilter').value;
+
+            filteredAds = advertisements.filter(ad => {
+                const matchesSearch = !searchTerm || 
+                    ad.title.toLowerCase().includes(searchTerm) ||
+                    ad.description.toLowerCase().includes(searchTerm) ||
+                    ad.author.toLowerCase().includes(searchTerm);
+                
+                const matchesCategory = !categoryFilter || ad.category === categoryFilter;
+                const matchesLocation = !locationFilter || 
+                    ad.location.toLowerCase().includes(locationFilter);
+
+                return matchesSearch && matchesCategory && matchesLocation;
+            });
+
+            displayAds(filteredAds);
+        }
+
+        function filterByCategory(category) {
+            document.getElementById('categoryFilter').value = category;
+            searchAds();
+        }
+
+        function toggleFavorite(adId) {
+            if (favorites.includes(adId)) {
+                removeFromFavorites(adId);
+            } else {
+                addToFavorites(adId);
+            }
+            // Re-render current view to update heart icons
+            const currentTitle = document.querySelector('#adsSection h2').textContent;
+            if (currentTitle.includes('Favorite')) {
+                showFavorites();
+            } else {
+                displayAds(filteredAds.length > 0 ? filteredAds : advertisements);
+            }
+        }
+
+        // Real-time search
+        document.getElementById('searchInput').addEventListener('input', searchAds);
+        document.getElementById('categoryFilter').addEventListener('change', searchAds);
+        document.getElementById('locationFilter').addEventListener('change', searchAds);
+
+        // Close modals when clicking outside
+        window.addEventListener('click', function(e) {
+            const modals = ['loginModal', 'postAdModal', 'settingsModal'];
+            modals.forEach(modalId => {
+                const modal = document.getElementById(modalId);
+                if (e.target === modal) {
+                    closeModal(modalId);
+                }
+            });
+            
+            // Close options dropdown when clicking outside
+            const optionsMenu = document.querySelector('.options-menu');
+            const optionsDropdown = document.getElementById('optionsDropdown');
+            if (!optionsMenu.contains(e.target)) {
+                optionsDropdown.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
